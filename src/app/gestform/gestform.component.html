@@ -1,13 +1,20 @@
-<form (ngSubmit)="onSubmit()"> 
-    <label>
-        Choisir la longueur de la liste à génerer:
-        <input type="number" [formControl]="gestform" >
-      </label>      
-</form>
-<div *ngIf="arrayResult">
-    <ul>
-        <li *ngFor="let item of arrayResult">
-            {{item}}
-        </li>
-    </ul>
+<div class="container">
+    <form (ngSubmit)="onSubmit()" class="field has-addons"> 
+            <input class="input" type="number" [formControl]="gestform"                 placeholder="Choisir la longueur de la liste à génerer:">
+          <div class="control">
+            <button class="button is-primary">Envoyer</button>
+          </div>
+    </form>
+    
+    
+    <div *ngIf="arrayResult.length">
+        <button (click)="onClick()" class="button is-danger">effacer</button>
+        <div class="content">
+            <ul>
+                <li *ngFor="let item of arrayResult">
+                    {{item}}
+                </li>
+            </ul>      
+        </div>
+    </div>
 </div>

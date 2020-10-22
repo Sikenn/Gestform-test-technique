@@ -34,7 +34,11 @@ export class GestformComponent{
         
       }
     }
-    console.log(this.arrayResult);
+  }
+
+  onClick() {
+    this.randomValues = [];
+    this.arrayResult = [];
   }
 
 }
