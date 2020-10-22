@@ -1,0 +1,13 @@
+<form (ngSubmit)="onSubmit()"> 
+    <label>
+        Choisir la longueur de la liste à génerer:
+        <input type="number" [formControl]="gestform" >
+      </label>      
+</form>
+<div *ngIf="arrayResult">
+    <ul>
+        <li *ngFor="let item of arrayResult">
+            {{item}}
+        </li>
+    </ul>
+</div>
